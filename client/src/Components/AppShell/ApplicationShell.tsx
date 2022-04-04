@@ -17,7 +17,15 @@ const ApplicationShell = () => {
 				fixed
 				navbar={
 					<Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
-						<Text>Application navbar</Text>
+						<Navbar.Section>
+							<Text>Navbar Main</Text>
+						</Navbar.Section>
+						<Navbar.Section>
+							<Text>Navbar Links</Text>
+						</Navbar.Section>
+						<Navbar.Section>
+							<Text>Navbar Footer</Text>
+						</Navbar.Section>
 					</Navbar>
 				}
 				footer={
@@ -38,7 +46,7 @@ const ApplicationShell = () => {
 				}
 			>
 				<Routes />
-				<Text>Resize app to see responsive navbar in action</Text>
+					<Text>Resize app to see responsive navbar in action</Text>
 			</AppShell>
 		</Router>
 	);
