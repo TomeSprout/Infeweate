@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { AppShell, Navbar, Header, Footer, Aside, Text, MediaQuery, Burger, useMantineTheme } from '@mantine/core';
+import { AppShell, Navbar, Header, Footer, Text, MediaQuery, Burger, useMantineTheme } from '@mantine/core';
 
 const ApplicationShell = () => {
 	const theme = useMantineTheme();
@@ -14,19 +14,19 @@ const ApplicationShell = () => {
 					},
 				}}
 				navbarOffsetBreakpoint="sm"
-				asideOffsetBreakpoint="sm"
 				fixed
 				navbar={
 					<Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
-						<Text>Application navbar</Text>
+						<Navbar.Section>
+							<Text>Navbar Main</Text>
+						</Navbar.Section>
+						<Navbar.Section>
+							<Text>Navbar Links</Text>
+						</Navbar.Section>
+						<Navbar.Section>
+							<Text>Navbar Footer</Text>
+						</Navbar.Section>
 					</Navbar>
-				}
-				aside={
-					<MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
-						<Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-							<Text>Application sidebar</Text>
-						</Aside>
-					</MediaQuery>
 				}
 				footer={
 					<Footer height={60} p="md">
@@ -46,7 +46,7 @@ const ApplicationShell = () => {
 				}
 			>
 				<Routes />
-				<Text>Resize app to see responsive navbar in action</Text>
+					<Text>Resize app to see responsive navbar in action</Text>
 			</AppShell>
 		</Router>
 	);
